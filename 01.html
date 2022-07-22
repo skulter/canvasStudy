@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Study</title>
+    <style>
+        canvas {
+            background: #eee;
+            width:500px;
+            height:300px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <canvas class="canvas1" width="500" height="300">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+    <canvas class="canvas2" width="1000" height="600">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+    <script>
+        const canvas = document.querySelector('.canvas1')
+        const canvas2 = document.querySelector('.canvas2')
+        const context = canvas.getContext('2d')
+        const context2 = canvas2.getContext('2d')
+
+        context.arc(100, 150, 50, 0, Math.PI * 2, false)
+        context2.arc(100, 150, 50, 0, Math.PI * 2, false)
+
+        context.fill()
+        context2.fill()
+
+        if (canvas.getContext) {
+            console.log("캔버스 지원")
+        }
+        else {
+            console.log("캔버스 미지원")
+        }
+    </script>
+</body>
+
+</html>
